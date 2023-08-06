@@ -14,6 +14,12 @@ import 'swiper/css';
 import 'swiper/css/free-mode'
 
 
+const TopChartCard = ( song, i ) => (
+  <div className="w-full flex flex-row items-center hover:bg[#FFFFFF] py-2 p-4 rounded-lg cursor-pointer mb-2">
+
+    {song.title}
+  </div>
+)
 
 
 const TopPlay = () => {
@@ -52,12 +58,22 @@ const TopPlay = () => {
 
         <div className="mt-4 flex flex-col gap-1">
           {topPlays?.map((song, i ) => (
-            <TopChartCard/>
+            <TopChartCard
+              key={song.key}
+              song={song}
+              i={i}
+            />
           ))}
 
         </div>
       </div>
 
+      <div className="flex flex-row justify-between items-center">
+          <h2 className="text-white font-bold"> Top Artists</h2>
+            <Link to="/top-charts">
+              <p className="text-gray-300 text-base cursor-pointer">See More</p>
+            </Link>
+      </div>
     </div>
     
     </>
