@@ -15,7 +15,7 @@ const Search = () => {
 
 
 
-    if (isFetching) return <Loader title="Loading Top charts" />;
+    if (isFetching) return <Loader title="Loading Songs" />;
 
     if (error) return <Error/>
 
