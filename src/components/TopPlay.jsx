@@ -60,11 +60,15 @@ const TopPlay = () => {
 
   };
 
-  const handlePlayClick = (song, i ) => {
-      dispatch(setActiveSong({ song, data, i }));
-      dispatch(playPause(true));
-
+  const handlePlayClick = (song) => {
+    if (activeSong?.key === song.key && isPlaying) {
+      dispatch(playPause(false)); // Pause the song if it's already playing
+    } else {
+      dispatch(setActiveSong(song));
+      dispatch(playPause(true)); // Play the clicked song
+    }
   };
+  
 
   return (
     <>

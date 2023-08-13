@@ -10,7 +10,7 @@ const ArtistDetails = () => {
    
     const { id: artistId } = useParams();
     const { activeSong, isPlaying } = useSelector((state) => state.player);
-    const {data: artistData, isFetching: isFetchingArtistDetails, error } = useGetArtistDetailsQuery({artistId});
+    const { data: artistData, isFetching: isFetchingArtistDetails, error } = useGetArtistDetailsQuery(artistId);
     
 
 
